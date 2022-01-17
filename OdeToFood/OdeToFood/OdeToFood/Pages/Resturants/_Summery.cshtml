@@ -1,0 +1,17 @@
+﻿@model Resturant
+
+
+<div class="card">
+    <div class="card-header">
+        <h3>@Model.Name</h3>
+    </div>
+    <div class="card-body">
+        <span> Location : @Model.Location </span>
+        <span> Cuisine : @Model.Coisine </span>
+    </div>
+    <div class="card-footer">
+        <a asp-page="Details" asp-route-Id="@Model.Id"> <img src="~/Images/zoom-in.svg" />  </a>
+        <a asp-page="Edit" asp-route-Id="@Model.Id"> <img src="~/Images/zoom-out.svg" />  </a>
+        <a asp-page="Delete" asp-route-id="@Model.Id">Delete</a>
+    </div>
+</div>

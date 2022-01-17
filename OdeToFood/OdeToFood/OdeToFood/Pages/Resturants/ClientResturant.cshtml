@@ -1,0 +1,29 @@
+﻿@page
+@model OdeToFood.Pages.Resturants.ClientResturantModel
+
+<table class="table" id="resturants">
+    
+</table>
+
+
+@section Scripts {
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.3/datatables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.3/datatables.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax("/api/home/",
+                { method: "get" })
+                .then(function (respone) {
+                    $("#resturants").DataTable({
+                        data: respone,
+                        columns: [
+                            { "data": "name" },
+                            { "data": "location" },
+                            { "data": "coisine" }
+                        ]
+                    })
+                });
+        });
+    </script>
+
+}

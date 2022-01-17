@@ -1,0 +1,28 @@
+﻿@page
+@model OdeToFood.Pages.Resturants.ListModel
+@{
+}
+
+<h1>Resturants</h1>
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" name="q" value="@Model.SearchTerm" />
+            <button class="btn" type="submit">
+                <img src="~/Images/send-fill.svg" />
+            </button>
+        </div>
+    </div>
+</form>
+
+@foreach (var resturant in Model.Resturants)
+{
+    <partial name="_Summery" model="resturant" />
+}
+
+
+<a asp-page="./Edit"> Create New Resturant</a>
+
+@section Footer {
+    <div> @Model.Message </div>
+}
