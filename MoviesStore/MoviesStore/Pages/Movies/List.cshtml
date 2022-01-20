@@ -1,0 +1,25 @@
+﻿@page
+@model MoviesStore.Pages.Movies.ListModel
+@{
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1> Movies </h1>
+    </div>
+</div>
+<div class="row justify-content-center">
+    @foreach (var Movie in Model.Movies)
+    {
+    <div class="card" style="width: 18rem; margin: 20px">
+        <img class="card-img-top" src="~/images/download.svg" alt="Card image cap"/>
+        <div class="card-body">
+            <h5 class="card-title"> @Movie.Name </h5>
+            <p class="card-text"> @Movie.Genre </p>
+            <div>
+                <a href="#" class="btn btn-primary">Show Details</a>
+            </div>    
+        </div>
+    </div>
+    }
+</div>
