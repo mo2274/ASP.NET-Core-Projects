@@ -1,0 +1,17 @@
+﻿@model Movie
+
+
+<div class="card" style="width: 18rem; margin: 20px">
+    <a href="./Details/@Model.Id">
+        <img class="card-img-top" src="../../images/@Model.ImageLink" alt="Card image cap" style="height: 400px" />
+    </a>
+    <div class="card-body">
+        <h5 class="card-title CardHeight" style="height: 40px"> @Model.Name </h5>
+        <p class="card-text CardHeight" style="height: 40px"> @Model.Genre </p>
+        <div class="CardHeight" style="height: 40px">
+            @*<a href="./Details/@Model.Id" class="btn btn-primary">Show Details</a>*@
+            <a href="./Edit/@Model.Id" class="btn btn-primary">Edit</a>
+            <a href="./Delete/@Model.Id" class="btn btn-primary">Delete</a>
+        </div>
+    </div>
+</div>

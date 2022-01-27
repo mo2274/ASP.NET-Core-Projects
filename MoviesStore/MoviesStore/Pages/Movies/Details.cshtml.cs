@@ -9,24 +9,25 @@ using MovieStore.Data;
 
 namespace MoviesStore.Pages.Movies
 {
-    public class ListModel : PageModel
+    public class DetailsModel : PageModel
     {
         private readonly IMovieStoreData movieStoreData;
-        public IEnumerable<Movie> Movies { get; set; }
 
-        public ListModel(IMovieStoreData movieStoreData)
+        public Movie movie { get; set; }
+
+        public DetailsModel(IMovieStoreData movieStoreData)
         {
             this.movieStoreData = movieStoreData;
         }
 
-        public void OnGet()
+        public IActionResult OnGet(int id)
         {
-            Movies = movieStoreData.GetMovies();
-        }
+            movie = movieStoreData.GetById(id);
 
-        public void OnPost(string name)
-        {
-            Movies = movieStoreData.GetByName(name);
+            if (movie == null)
+                return NotFound();
+
+            return Page();
         }
     }
 }

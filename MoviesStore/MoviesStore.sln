@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesStore", "MoviesStore\MoviesStore.csproj", "{7FFCEFF2-A3C2-49D1-9CA7-240D3D71512E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStore.Core", "MovieStore.Core\MovieStore.Core.csproj", "{13938E83-1EFB-4337-A85B-F3901045870D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieStore.Core", "MovieStore.Core\MovieStore.Core.csproj", "{13938E83-1EFB-4337-A85B-F3901045870D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStore.Data", "MovieStore.Data\MovieStore.Data.csproj", "{0CA3E57D-42EB-4659-B526-25DA7143B159}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieStore.Data", "MovieStore.Data\MovieStore.Data.csproj", "{0CA3E57D-42EB-4659-B526-25DA7143B159}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

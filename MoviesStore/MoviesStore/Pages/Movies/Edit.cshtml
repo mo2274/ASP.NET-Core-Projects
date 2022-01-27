@@ -1,0 +1,38 @@
+﻿@page "{id:int}"
+@model MoviesStore.Pages.Movies.EditModel
+@{
+}
+
+
+
+<form method="post">
+    <div class="form-group">
+        <input class="form-control" type="hidden" asp-for="@Model.Movie.Id" />
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Movie.Name"></label>
+        <input class="form-control" type="text" asp-for="@Model.Movie.Name" />
+        <span asp-validation-for="@Model.Movie.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Movie.Rate"></label>
+        <input class="form-control" type="number" asp-for="@Model.Movie.Rate" />
+        <span asp-validation-for="@Model.Movie.Rate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Movie.Genre"></label>
+        <select class="form-control" asp-for="@Model.Movie.Genre" asp-items="@Model.Genres">
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Movie.ImageLink"></label>
+        <input class="form-control" type="text" asp-for="@Model.Movie.ImageLink" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
