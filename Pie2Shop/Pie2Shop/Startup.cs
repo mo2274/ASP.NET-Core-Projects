@@ -29,7 +29,7 @@ namespace Pie2Shop
             services.AddScoped<ICategoryRepository, CategoryRepositorySqlServer>();
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+                options => options.UseSqlServer(Configuration.GetConnectionString("MainConnection"))
             );
         }
 
@@ -51,7 +51,7 @@ namespace Pie2Shop
             {
                 endpoints.MapControllerRoute(
                         name: "Default",
-                        pattern: "{Controller=Home}/{Action=Index}/{id?}"
+                        pattern: "{Controller=Pie}/{Action=List}/{id?}"
                     );
             });
         }
