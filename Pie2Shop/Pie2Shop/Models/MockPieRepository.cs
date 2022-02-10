@@ -30,5 +30,10 @@ namespace Pie2Shop.Models
         {
             return AllPies.FirstOrDefault(pie => pie.PieId == pieId);
         }
+
+        public Pie GetPieByName(string name)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -25,5 +25,12 @@ namespace Pie2Shop.Models
         {
             return appDbContext.Pies.Include(p => p.Category).SingleOrDefault(p => p.PieId == pieId);
         }
+
+        public Pie GetPieByName(string name)
+        {
+            return appDbContext.Pies
+                .Include(p => p.Category)
+                .FirstOrDefault(p => p.Name.ToLower().Contains(name.ToLower())); ;
+        }
     }
 }

@@ -39,5 +39,15 @@ namespace Pie2Shop.Controllers
 
             return View(pie);
         }
+
+        public IActionResult Search(string name)
+        {
+            var pie = _pieRepository.GetPieByName(name);
+
+            if (pie == null)
+                return RedirectToAction("List");
+
+            return View("Details", pie);
+        }
     }
 }
