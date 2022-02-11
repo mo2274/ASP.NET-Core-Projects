@@ -10,8 +10,16 @@
         <h3 class="float-end"> @Model.Price.ToString("c") </h3>
         <h3>
             <a href="#"> @Model.Name </a>
-        </h3> 
+        </h3>
         <h4>@Model.ShortDescription</h4>
         <p> @Model.LongDescription </p>
+    </div>
+    <div class="addToCart">
+        <p class="accordion-button">
+            <a class="btn btn-outline-primary"
+               asp-controller="ShoppingCart"
+               asp-action="AddToShoppingCart"
+               asp-route-pieId="@Model.PieId"> Add to cart</a>
+        </p>
     </div>
 </div>

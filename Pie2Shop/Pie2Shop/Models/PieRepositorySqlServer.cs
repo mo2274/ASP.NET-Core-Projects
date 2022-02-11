@@ -28,6 +28,9 @@ namespace Pie2Shop.Models
 
         public Pie GetPieByName(string name)
         {
+            if (String.IsNullOrEmpty(name))
+                return null;
+
             return appDbContext.Pies
                 .Include(p => p.Category)
                 .FirstOrDefault(p => p.Name.ToLower().Contains(name.ToLower())); ;

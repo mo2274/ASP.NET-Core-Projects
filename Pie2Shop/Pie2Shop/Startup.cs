@@ -31,6 +31,9 @@ namespace Pie2Shop
             services.AddDbContext<AppDbContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("MainConnection"))
             );
+            services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+            services.AddHttpContextAccessor();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,13 +48,15 @@ namespace Pie2Shop
 
             app.UseStaticFiles();
 
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                         name: "Default",
-                        pattern: "{Controller=Pie}/{Action=List}/{id?}"
+                        pattern: "{Controller=Home}/{Action=Index}/{id?}"
                     );
             });
         }

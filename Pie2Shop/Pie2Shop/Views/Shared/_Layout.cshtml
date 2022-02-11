@@ -6,6 +6,7 @@
     <title>Pathany's Pie Shop</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
     <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">*@
     <script src="~/lib/jquery/jquery.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.js"></script>
     <link href="~/Content/Site.css" rel="stylesheet" />
@@ -13,18 +14,21 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-inverse fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand SetColor" asp-controller="Pie" asp-action="List">Pathany's Pie Shop</a>
+            <a class="navbar-brand SetColor" asp-controller="Home" asp-action="Index">Pathany's Pie Shop</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active SetColor" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active SetColor" aria-current="page" asp-controller="Pie" asp-action="List" >Pies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link SetColor" href="#">Link</a>
+                        <a class="nav-link SetColor" asp-controller="ShoppingCart" asp-action="Index">
+                            <img src="~/Images/cart4.svg" />
+                        </a>
                     </li>
+                    @await Component.InvokeAsync("ShoppingCartSummery")
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle SetColor" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown
