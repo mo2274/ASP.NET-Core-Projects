@@ -2,12 +2,11 @@
 
 @if (Model.ShoppingCart.ShoppingCartItems.Count > 0)
 {
-   <li>
+   @*<li>*@
        <a>
-           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
            <span id="cart-status">
                @Model.ShoppingCart.ShoppingCartItems.Count
            </span>
        </a>
-   </li>
+   @*</li>*@
 }

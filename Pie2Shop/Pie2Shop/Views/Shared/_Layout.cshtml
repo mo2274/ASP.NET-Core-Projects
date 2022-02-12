@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active SetColor" aria-current="page" asp-controller="Pie" asp-action="List" >Pies</a>
+                        <a class="nav-link active SetColor" aria-current="page" asp-controller="Pie" asp-action="List">Pies</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link SetColor" asp-controller="ShoppingCart" asp-action="Index">
@@ -29,6 +29,12 @@
                         </a>
                     </li>
                     @await Component.InvokeAsync("ShoppingCartSummery")
+                    <li class="nav-item">
+                        <a class="nav-link SetColor" asp-controller="Contact" asp-action="Index">
+                            Contact
+                        </a>
+                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle SetColor" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown
@@ -38,14 +44,6 @@
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -71,5 +69,8 @@
             </div>
         </div>
     </div>
+    @RenderSection("Scripts", required: false)
 </body>
+
 </html>
+

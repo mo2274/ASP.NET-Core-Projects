@@ -35,5 +35,10 @@ namespace Pie2Shop.Models
         {
             throw new System.NotImplementedException();
         }
+
+        public IEnumerable<Pie> GetPiesByCategory(int CategoryId)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

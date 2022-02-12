@@ -49,5 +49,21 @@ namespace Pie2Shop.Controllers
 
             return View("Details", pie);
         }
+
+        public IActionResult PiesByCategory(int categoryId)
+        {
+            var pies = _pieRepository.GetPiesByCategory(categoryId);
+
+            if (pies == null)
+                return RedirectToAction("List");
+
+            var pieViewModel = new PieListViewModel()
+            {
+                Pies = pies,
+                CurrentCategory = pies.First().Category.Name
+            };
+
+            return View("List", pieViewModel);
+        }
     }
 }

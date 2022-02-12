@@ -33,7 +33,14 @@ namespace Pie2Shop.Models
 
             return appDbContext.Pies
                 .Include(p => p.Category)
-                .FirstOrDefault(p => p.Name.ToLower().Contains(name.ToLower())); ;
+                .FirstOrDefault(p => p.Name.ToLower().Contains(name.ToLower()));
+        }
+
+        public IEnumerable<Pie> GetPiesByCategory(int CategoryId)
+        {
+            return appDbContext.Pies
+                .Include(p => p.Category)
+                .Where(p => p.CategoryId == CategoryId);
         }
     }
 }

@@ -11,5 +11,6 @@ namespace Pie2Shop.Models
         IEnumerable<Pie> PiesOfTheWeek { get; }
         Pie GetPieById(int pieId);
         Pie GetPieByName(string name);
+        IEnumerable<Pie> GetPiesByCategory(int CategoryId);
     }
 }
