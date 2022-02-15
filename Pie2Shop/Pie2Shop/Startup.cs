@@ -27,9 +27,10 @@ namespace Pie2Shop
         {
             services.AddScoped<IPieRepository, PieRepositorySqlServer>();
             services.AddScoped<ICategoryRepository, CategoryRepositorySqlServer>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("MainConnection"))
+                options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
             services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
             services.AddHttpContextAccessor();
