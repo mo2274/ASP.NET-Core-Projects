@@ -18,17 +18,32 @@ namespace Pie2Shop.Controllers
             this.shoppingCart = shoppingCart;
         }
 
+        [HttpGet]
         public IActionResult CheckOut()
         {
-            var order = new Order();
-
-            return View(order);
+            return View();
         }
 
-        public IActionResult Create(Order order)
+        [HttpPost]
+        public IActionResult CheckOut(Order order)
         {
+            if (shoppingCart.GetShoppingCartItems().Count == 0)
+            {
+                ModelState.AddModelError("", "Your cart is empty, add pies first");
+            }
+
+            if (!ModelState.IsValid)
+                return View(order);
+
             orderRepository.CreateOrder(order);
-            return View();
+            shoppingCart.ClearCart();
+
+            return RedirectToAction("CheckOutComplete");
+        }
+
+        public IActionResult CheckOutComplete()
+        {
+            return View("CheckOutComplete","Thanks for your order");
         }
     }
 }

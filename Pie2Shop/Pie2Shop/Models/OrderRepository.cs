@@ -21,8 +21,9 @@ namespace Pie2Shop.Models
             order.OrderPlaced = DateTime.Now;
 
             appDbContext.Orders.Add(order);
+            appDbContext.SaveChanges();
 
-            var shopingCartItems = shoppingCart.ShoppingCartItems;
+            var shopingCartItems = shoppingCart.GetShoppingCartItems();
 
             foreach (var shopingCartItem in shopingCartItems)
             {
